@@ -31,7 +31,7 @@ var model = {
     var err = '';
     for (id in this.users) {
       if (this.users[id]['email'] == email) {
-        if ((this.users[id]['password'] = password)) {
+        if ((this.users[id]['password'] == password)) {
           callback(err, this.users[id]['username']);
         }
       }
@@ -51,7 +51,7 @@ var model = {
             if (user.email.includes('@')) {
               var arr = user.email.split('@');
               if (arr[1].includes('.')) {
-                return null;
+                return cdnull;
               } else {
                 return 'there is no . in your email';
               }
@@ -72,43 +72,5 @@ var model = {
     }
   }
 };
-console.log (model.validate({
-    email: 'user@gmail.com',
-    password: 'password1',
-    id: 1
-  }))
 
-  console.log (model.validate({
-    username: 'user1',
-    password: 'password1',
-    id: 1
-  }))
-
-
-  console.log (model.validate({
-    username: 'user1',
-    email: 'user@gmail.com',
-    id: 1
-  }))
-
-  console.log (model.validate({
-    username: 'user1',
-    email: 'usergmail.com',
-    password: 'password1',
-    id: 1
-  }))
-
-  console.log (model.validate({
-    username: 'user1',
-    email: 'user@gmailcom',
-    password: 'password1',
-    id: 1
-  }))
-
-  console.log (model.validate({
-    username: 'user1',
-    email: 'user@gmail.com',
-    password: 'password1',
-    id: 1
-  }))
 module.exports = model;
