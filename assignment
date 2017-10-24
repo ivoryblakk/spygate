@@ -1,0 +1,4 @@
+for the user and admin stories
+	build the microservices
+		ignore views/locals
+		ignore index

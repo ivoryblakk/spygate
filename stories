@@ -1,0 +1,10 @@
+guests
+	read one
+	read all
+
+users
+	create
+	update
+
+admins
+	delete
