@@ -7,6 +7,7 @@ var admin = require("./admin");// this accesses the admin folder in micro servic
 //var auth = require("./authentification");
 
 //app.use(auth);
+
 app.use("/admin", admin, user, guest);// the first part is the developler made route name and the second part is the three access folders
 app.use("/user", user, guest); // the first part is the developler made route name and the second part is two access folders
 app.use("/guest", guest); // the first part is the developler made route name and the second part is where to access the folder

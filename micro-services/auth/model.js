@@ -19,11 +19,11 @@ var model = {
       id: 2
     }
   },
-  nextID: 0,
+  nextID: 3,
   create: function(newObject, callback) {
     var err = this.validate(newObject);
     newObject.id = this.nextID;
-    this.db[this.nextID] = newObject;
+    this.users[this.nextID] = newObject;
     this.nextID++;
     callback(err, newObject);
   },
@@ -51,7 +51,7 @@ var model = {
             if (user.email.includes('@')) {
               var arr = user.email.split('@');
               if (arr[1].includes('.')) {
-                return cdnull;
+                return null;
               } else {
                 return 'there is no . in your email';
               }
