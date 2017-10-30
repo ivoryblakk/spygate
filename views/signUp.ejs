@@ -1,0 +1,14 @@
+<% include partials/header %>
+<h3>Sign Up</h3>
+<% if (err) { %>
+    <h3>  <%= err %> </h3>
+<% } %>
+<form action="/auth/signUp" method="post">
+    <label for = "username" > Email</label>
+    <input type="email" name="username" required placeholder="john.smith@gmail.com">
+    <label for="passord">Password</label>
+    <input type="password" name ="password" placeholder="password" required >
+    <br>
+    <button type="submit"> submit </button>
+</form>
+<% include partials/footer %>

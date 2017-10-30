@@ -1,0 +1,8 @@
+<% include partials/header %>
+
+<% if (err) { %>
+    <h3> <% err %> </h3>
+<% } else { %>
+<p> <%= username %> <br> <%= password %></p>
+<% } %>
+<% include partials/footer %> 
