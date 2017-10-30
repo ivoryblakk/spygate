@@ -4,7 +4,7 @@ var view = {
     if (err) {
       this.res.render('login', { err: err });
     } else {
-      this.res.render(__dirname + '/login', { err: err });
+      this.res.render('login', { err: err });
     }
   },
   render_signUp: function (err) {

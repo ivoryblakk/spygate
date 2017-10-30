@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('./controller.js');
-const view = require("./views/send.js")
+const view = require("./views/send.js");
 // Finally add a route /clean to remove all user's records from the collection. This will be called at each time we start the test to reset the initial conditions.
 
 router.use(function (req, res, next) {
@@ -15,6 +15,7 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+    console.log(req.body);
     controller.login(req.body.email, req.body.password, function (err, username) {
         if (err) {
             controller.showLoginForm(err);
