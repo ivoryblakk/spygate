@@ -1,35 +1,29 @@
 var model = require('./model');
 
-var controller ={
-    view:{},
+var controller = {
+    view: {},
     model: model,
-    login(email, password){
-        this.model.login(email, password, function(err, username){
-       if(err){
-           // change the name of redirect
-           this.view.redirect("/")
-       } else{
-           // change the name of redirect
-           this.view.redirect("/user")
-       } 
-    })
+    login(email, password, callback) {
+        this.model.login(email, password, callback);
     },
-    create(newObject){
-        
-        this.model.create(newObject,(err)=>{
-            if(err){          
+    create(newObject) {
+
+        this.model.create(newObject, (err) => {
+            if (err) {
                 this.view.render_signUp(err);
-            } else{
+            } else {
                 err = null;
                 console.log(newObject)
-                this.view.render_home(err, newObject);     
-            } 
+                this.view.render_home(err, newObject);
+            }
         })
 
     },
-    showForm(){
-      this.view.render_signUp();
-
+    showSignupForm(err) {
+        this.view.render_signUp(err);
+    },
+    showLoginForm(err) {
+        this.view.render_login(err);
     }
 
 

@@ -8,14 +8,20 @@ router.use(function(req, res, next) {
 	view.res = res;
 	controller.view = view;
 	next();
-})
+});
+
+router.get('/', (req, res) => {
+	controller.get_all();
+});
+
+router.get('/get_all', (req, res) => {
+	controller.get_all();
+});
 
 router.get('/get_one/:id', (req, res) => {
 	var id = Number(req.params.id);
 	controller.get_one(id);
 });
-router.get('/get_all', (req, res) => {
-	controller.get_all();
-});
+
 
 module.exports = router;
