@@ -21,7 +21,7 @@ router.post("/signUp",(req,res)=>{
     var username = req.body.username;
     var password = req.body.password;
     var newObject = {username:username , email: email, password: password}
-    console.log(newObject)
+   
  
     controller.create(newObject);
     
